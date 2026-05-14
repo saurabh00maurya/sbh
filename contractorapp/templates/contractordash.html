@@ -1,0 +1,76 @@
+{% extends 'contractorbase.html' %}
+
+{% block contractors %}
+
+<h3 class="mb-4">Contractor Dashboard</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card shadow text-center p-3">
+<h5>Available Projects</h5>
+<h2 class="text-primary">{{totalprojects}}</h2>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow text-center p-3">
+<h5>Applied Projects</h5>
+<h2 class="text-warning">{{appliedprojects}}</h2>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow text-center p-3">
+<h5>Assigned Projects</h5>
+<h2 class="text-success">{{assignedprojects}}</h2>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<h4>Recent Applications</h4>
+
+<table class="table table-bordered">
+
+<tr>
+<th>S.No</th>
+<th>Project Name</th>
+<th>Budget</th>
+<th>Status</th>
+</tr>
+
+{% for a in recentapplications %}
+
+<tr>
+
+<td>{{forloop.counter}}</td>
+
+<td>{{a.project.projectname}}</td>
+
+<td>{{a.estimated_budget}}</td>
+
+<td>
+
+{% if a.status == 'pending' %}
+<span class="badge bg-warning">Pending</span>
+
+{% elif a.status == 'approved' %}
+<span class="badge bg-success">Approved</span>
+
+{% elif a.status == 'rejected' %}
+<span class="badge bg-danger">Rejected</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

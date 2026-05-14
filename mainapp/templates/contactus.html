@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="container-fluid" style="background-color:#233247;">
+
+    <div class="row " id="contact">
+        <div class="col-sm-12">
+            <h1 class="text-center text-light "> Contact us</h1>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 style="color: white;">Contact For Any Querry</h1>
+                    {% if messages %}
+                    {% for m in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{m}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="https://formsubmit.co/saurabhmaurya11112003@gmail.com" method="POST"
+                        class="row g-3 mt-2">
+
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="col-md-6">
+                            <label for="name" class="form-label" style="color:white;">Name</label>
+                            <input type="text" name="name" class="form-control py-2" id="name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Contact" class="form-label" style="color:white;">Contact</label>
+                            <input type="text" name="contactno" class="form-control py-2" id="Contact">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label" style="color:white;">Email</label>
+                            <input type="email" name="email" class="form-control py-2" id="email">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="s" class="form-label" style="color:white;">Subject</label>
+                            <input name="subject" type="text" class="form-control py-2" id="s">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="m" class="form-label" style="color:white;">Message</label>
+                            <textarea name="message" class="form-control" rows="4" id="m"></textarea>
+                        </div>
+
+                        <div class="col-12" style="margin-bottom:10px;">
+                            <button type="submit" class="btn btn-warning w-100 fw-bold fs-5">Send</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-sm-6" style="margin-top: 45px;">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.276084857011!2d80.99633347450667!3d26.95815505813785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bff2addd9b239%3A0xc21a9bbd557936ec!2sIntegral%20University!5e0!3m2!1sen!2sin!4v1729754075513!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+{% endblock %}

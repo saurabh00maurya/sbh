@@ -1,0 +1,36 @@
+{% extends 'adminbase.html' %}
+
+{% load static %}
+
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table mt-4">
+            <tr>
+                <th>S.no.</th>
+                <th>Name</th>
+                <th>Contact no</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Enquiry Date</th>
+                <th>Action</th>
+            </tr>
+            {% for e in enqs %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.contactno}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.message}}</td>
+                <td>{{e.enqdate}}</td>
+                <td>
+                    <a href="{% url 'delenq' id=e.id%}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>Delete</a>
+            
+                </td>
+            </tr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

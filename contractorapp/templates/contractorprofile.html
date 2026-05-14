@@ -1,0 +1,60 @@
+{% extends 'contractorbase.html' %}
+{% load static %}
+
+{% block contractors %}
+
+<div class="row">
+<div class="col-lg-6 mx-auto">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white text-center">
+<h4 class="mb-0">Contractor Profile</h4>
+</div>
+
+<div class="card-body text-center">
+
+{% if contractor.picture %}
+<img src="{{contractor.picture.url}}" 
+class="rounded-circle mb-3"
+height="120"
+width="120">
+{% else %}
+<img src="{% static 'admin/assets/images/user/avatar-2.jpg' %}"
+class="rounded-circle mb-3"
+height="120"
+width="120">
+{% endif %}
+
+<h4 class="mb-3">{{contractor.name}}</h4>
+
+<hr>
+
+<div class="text-start">
+
+<p><strong>Contact Number:</strong> {{contractor.contactno}}</p>
+
+<p><strong>Email:</strong> {{contractor.email}}</p>
+
+<p><strong>Address:</strong> {{contractor.address}}</p>
+
+<p><strong>Bio:</strong> {{contractor.bio}}</p>
+
+</div>
+
+</div>
+
+<div class="card-footer text-center">
+
+<a href="{% url 'contractoredit' %}" class="btn btn-primary px-4">
+Edit Profile
+</a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}

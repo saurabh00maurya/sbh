@@ -1,0 +1,41 @@
+{% extends 'homeownerbase.html' %}
+
+{% load static %}
+
+{% block homeowners %}
+
+<h1>HomeOwners Edit Profile</h1>
+<form  method="post" class="row g-4" enctype="multipart/form-data"> 
+    {% csrf_token %}
+    <div class="col-sm-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" value="{{homeowner.name}}" name="name" id="n" class="form-control">
+    </div>
+    <div class="col-sm-6">
+        <label for="cn" class="form-label">Contact Number</label>
+        <input type="text" value="{{homeowner.contactno}}" name="contactno" id="cn" class="form-control">
+    </div>
+        <div class="col-sm-6">
+        <label for="em" class="form-label">Email</label>
+        <input type="email" value="{{homeowner.contactno}}" name="email" id="ema" class="form-control">
+    </div>
+        <div class="col-sm-6">
+        <label for="cn" class="form-label"></label>
+        <input type="file" value="{{homeowner.contactno}}" name="profile" id="pro" class="form-control">
+    </div>
+    <div class="col-sm-12">
+        <label for="ad" class="form-label">Enter Full Address</label>
+        <textarea name="address"  id="ad" class="form-control">{{homeowner.address}}</textarea>
+    </div>
+    <div class="col-sm-12">
+        <label for="bio" class="form-label">Bio</label>
+        <textarea name="bio"  id="bio" class="form-control">{{homeowner.bio}}</textarea>
+    </div>
+    <div class="col-sm-12">
+        <button class="btn btn-success">Update</button>
+    </div>
+
+</form>
+
+
+{% endblock %}

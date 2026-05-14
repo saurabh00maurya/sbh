@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="row" style="height: 80vh; background-color: rgb(228, 84, 11);">
+    <div class="col-sm-5 mx-auto my-auto">
+        <div class="card p-5">
+            <form method="post">
+                {% csrf_token %}
+                <h1 class="text-center">Login Here</h1>
+                 {% if messages %}
+                        {% for n in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{n}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                <div class="form-floating mb-3">
+                    <input type="email" name="username" class="form-control" id="floatingInput" placeholder="Enter Username">
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

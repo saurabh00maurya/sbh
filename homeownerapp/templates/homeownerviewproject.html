@@ -1,0 +1,64 @@
+{% extends 'homeownerbase.html' %}
+
+{% load static %}
+
+{% block homeowners %}
+<div class="row">
+    <div class="col-sm-12">
+<h1>My Project</h1>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>S.No</th>
+            <th>Project Name</th>
+            <th>Duration (In days)</th>
+            <th>Budget</th>
+            <th>Location</th>
+            <th>Progress (%)</th>
+            <th>Status</th>
+            <th>Plot Size</th>
+            <th>House Type</th>
+            <th>No. of Floor</th>
+            <th>Basement</th>
+            <th>Parking</th>
+            <th>Bedrooms</th>
+            <th>Bathrooms</th>
+            <th>Kitchen on each floor</th>
+            <th>Additional Rooms</th>
+            <th>Out door Areas</th>
+            <th>Action</th>
+            
+            
+        </tr>
+        {% for p in projects %}
+
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{p.projectname}}</td>
+            <td>{{p.duration}}</td>
+            <td>{{p.budget}}</td>
+            <td>{{p.location}}</td>
+            <td>{{p.progress}}</td>
+            <td>{{p.status}}</td>
+            <td>{{p.plot_size}}</td>
+            <td>{{p.house_type}}</td>
+            <td>{{p.num_floors}}</td>
+            <td>{{p.basement}}</td>
+            <td>{{p.parking_required}}</td>
+            <td>{{p.bedrooms}}</td>
+            <td>{{p.bathrooms}}</td>
+            <td>{{p.litchen_each_floor}}</td>
+            <td>{{p.additional_room}}</td>
+            <td>{{p.outdoor_areas}}</td>
+            <td>
+                <a href="{% url 'homeownerviewapplications' id=p.id %}" class="btn btn-primary">View Contractor Application</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

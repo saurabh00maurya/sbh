@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+ <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Building Tomorrow Today</span>
+      <h1>Transforming Visions Into <span>Exceptional Structures</span></h1>
+      <p>We deliver innovative construction solutions that exceed expectations and
+        stand the test of time.</p>
+      <div>
+        <a href="#" class="btn-primary">Get Started</a>
+        <a href="#" class="btn-outline">Our Projects</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">More</div>
+        <div class="stat-label">Experienced</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Multiple</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Client</div>
+        <div class="stat-label">Satisfaction</div>
+      </div>
+    </div>
+  </section>
+<!--about-->
+    <section class="about" id="about">
+    <div class="about-img">
+      <img src="{% static 'img/12.webp' %}" alt="Construction worker">
+      
+    </div>
+    <div class="about-text">
+      <p class="section-eyebrow">About Our Company</p>
+      <h2 class="section-title">Building Dreams With Excellence & Reliability</h2>
+      <p>With decades of industry experience, our team of professional builders and architects are dedicated to bringing
+        your vision to life. We handle projects of any scale with meticulous attention to detail and unwavering
+        commitment to quality.</p>
+      <ul class="check-list">
+        <li>Professional team of experienced builders and designers</li>
+        <li>High-quality materials sourced from trusted suppliers</li>
+        <li>On-time project completion and transparent communication</li>
+      </ul>
+      <a href="#" class="btn-primary">Learn More About Us</a>
+    </div>
+  </section>
+<!--about-->
+
+<!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="features-header">
+      <p class="section-eyebrow">Platform Features</p>
+      <h2 class="section-title">Powerful Tools for Modern Construction</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Project Dashboard</h3>
+        <p>Centralized hub for tracking progress, milestones, and resource allocation with intuitive visualizations.</p>
+        <ul class="feature-list">
+          <li>Real-time status tracking</li>
+          <li>Task management system</li>
+          <li>Budget monitoring</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Team Collaboration</h3>
+        <p>Connect all stakeholders in one platform with powerful communication and file-sharing capabilities.</p>
+        <ul class="feature-list">
+          <li>Unified messaging system</li>
+          <li>Document sharing & approvals</li>
+          <li>Role-based permissions</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏗️</div>
+        <h3>3D Visualization</h3>
+        <p>Experience your construction project in three dimensions before breaking ground.</p>
+        <ul class="feature-list">
+          <li>Interactive models</li>
+          <li>Virtual walkthroughs</li>
+          <li>Design revisions in real-time</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+    <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="process-header">
+      <p class="section-eyebrow">Our Process</p>
+      <h2 class="section-title">How SmartBuild Hub Works</h2>
+      <p>Our innovative platform transforms the construction journey from concept to completion through an intuitive
+        digital workflow that connects all stakeholders.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Project Planning</h3>
+        <p>Create your vision with our intuitive tools. Define requirements, set budgets, and establish timelines in a
+          collaborative environment.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Team Assembly</h3>
+        <p>Connect with architects, contractors, and suppliers through our verified network to build your ideal
+          construction team.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Project Execution</h3>
+        <p>Monitor progress in real-time, approve changes instantly, and maintain clear communication throughout
+          construction.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Project Completion</h3>
+        <p>Receive comprehensive documentation, warranty information, and maintenance schedules for your new
+          construction.</p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

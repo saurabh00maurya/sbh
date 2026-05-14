@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="container py-5 mt-5">
+
+<div class="row justify-content-center ">
+
+<div class="col-12 col-md-8 col-lg-5">
+
+
+
+<div class="card p-4 shadow border-0" style="background-color:#161b25;">
+  <h2 class="text-center mb-4 ">Register</h2>
+
+{% if messages %}
+{% for m in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{m}}
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<form method="post">
+{% csrf_token %}
+
+<div class="mb-3">
+<label class="form-label">Full Name</label>
+<input type="text" name="name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Contact No</label>
+<input type="number" name="contactno" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Password</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Select Usertype</label>
+<select class="form-select" name="usertype" required>
+<option value="homeowner">Home Owner</option>
+<option value="contractor">Contractor</option>
+</select>
+</div>
+
+<div class="d-grid">
+<button type="submit" class="btn btn-primary">Sign Up</button>
+</div>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

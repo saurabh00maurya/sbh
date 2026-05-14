@@ -1,0 +1,79 @@
+{% extends 'homeownerbase.html' %}
+
+{% block homeowners %}
+
+<h3 class="mb-4">HomeOwner Dashboard</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card shadow p-3 text-center">
+<h5>Total Projects</h5>
+<h2 class="text-primary">{{totalprojects}}</h2>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow p-3 text-center">
+<h5>Running Projects</h5>
+<h2 class="text-warning">{{runningprojects}}</h2>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow p-3 text-center">
+<h5>Completed Projects</h5>
+<h2 class="text-success">{{completedprojects}}</h2>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<h4>Recent Projects</h4>
+
+<table class="table table-bordered">
+
+<tr>
+<th>S.No</th>
+<th>Project Name</th>
+<th>Status</th>
+<th>Progress</th>
+</tr>
+
+{% for p in recentprojects %}
+
+<tr>
+<td>{{forloop.counter}}</td>
+<td>{{p.projectname}}</td>
+
+<td>
+<span class="badge bg-info">
+{{p.status}}
+</span>
+</td>
+
+<td>
+
+<div class="progress">
+
+<div class="progress-bar bg-success"
+>
+
+{{p.progress}}%
+
+</div>
+
+</div>
+
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
